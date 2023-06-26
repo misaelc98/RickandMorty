@@ -2,14 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: solid rgb(0, 255, 0);
     padding: 40px;
     color: rgb(0, 255, 0);
-};
+}
 
 .formTitle{
-    margin-bottom: 15px;
-};
+    margin-bottom: 5px;
+}
 
 .credencial{
     position: relative;
@@ -17,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     margin: 15px;
-};
+}
 
 .credencial input{
     background: none;
@@ -29,7 +28,7 @@
 
 .credencial input:focus {
     outline: none;
-};
+}
 
 .credencial span {
     color: red;
@@ -42,7 +41,7 @@
     border: solid rgb(0, 255, 0) 1px;
     background: rgb(44, 46, 49);
     color: rgb(0, 255, 0);
-    font-size: 15px;
+    font-size: 20px;
     max-width: 200px;
     min-width: 200px;
     max-height: 50px;
@@ -53,4 +52,4 @@
 .submitButton:hover{
     box-shadow: inset 0 0 10px rgb(0, 255, 0);
     font-size: 20px;
-};
+}

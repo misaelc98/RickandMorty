@@ -93,11 +93,8 @@ function App() {
   }
 
   return (
-    <div className={style.App}>
-      <img
-        src="https://www.pngplay.com/wp-content/uploads/14/Rick-And-Morty-Logo-Transparent-File.png"
-        alt="logo"
-      />
+    <div className={style.app}>
+      <div className={style.starsAnimation} />
 
       {location.pathname !== "/" && (
         <Nav onSearch={searchHandler} random={randomHandler} />

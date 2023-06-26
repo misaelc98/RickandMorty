@@ -1,3 +1,38 @@
-.landingContainer{
-    padding: 100px 150px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginButton {
+  border-radius: 100px;
+  border: transparent;
+  background-color: transparent;
+  color: rgb(0, 255, 0);
+  font-size: 80px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: auto;
+  height: auto;
+  margin-top: 23px;
+  cursor: pointer;
+  position: relative;
+}
+
+.loginButton:hover {
+  color: #0b761b;
+}
+
+.formContainer {
+  background-image: url("../../../../public/portalpng.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 500px;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  opacity: 0.6;
+  border-radius: 100%;
+  background-color: black;
 }

@@ -1,11 +1,40 @@
-.App {
-   flex-direction: column;
-   align-items: center;
-};
+.app {
+  background-color: #000000;
+  background-attachment: fixed;
+  
+}
 
-.title{
-   margin-top: 15px;
-   margin-bottom: 10px;
-   height: 150px;
-};
+.starsAnimation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200pc;
+  height: 200pc;
+  border-radius: 100%;
+  background-image: url("../public/cieloHD.jpg");
+  background-size: cover;
+  animation: stars-rotation 380s linear infinite;
+  filter: brightness(0.5);
+}
 
+@keyframes stars-rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+
+
+
+
+/* .fondo {
+  background-image: url("/public/evilmort.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
