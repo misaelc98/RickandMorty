@@ -1,29 +1,52 @@
-.formContainer{
-    display: flex;
+.formContainer {
+    filter: brightness(3);
+    display:flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 40px;
-    color: rgb(0, 255, 0);
-}
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    height: 40vh;
+  }
 
-.formTitle{
-    margin-bottom: 5px;
-}
 
 .credencial{
-    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column  ;
+    position: relative;
     align-items: center;
-    margin: 15px;
+    margin: 50px;
+    color: black;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 45px;
+    text-shadow: 1px 1px 2px rgb(0, 3, 6);
+    width: 300px;
 }
 
 .credencial input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
+    border-radius:none ;
     border: none;
-    border-bottom: solid rgb(0, 255, 0) 1px;
-    color: rgb(0, 255, 0);
+    border-bottom: solid rgb(0, 0, 0) 1px;
+    border-bottom-width: 3px ;
+    color: rgb(0, 0, 0);
     margin: 10px 0;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.credencial input::placeholder{
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
 }
 
 .credencial input:focus {
@@ -31,6 +54,10 @@
 }
 
 .credencial span {
+    font-family: monospace;
+    text-shadow: none;
+    font-size: large;
+    font-weight: 900;
     color: red;
 }
 
@@ -39,14 +66,14 @@
     left: 0px;
     border-radius: 5px;
     border: solid rgb(0, 255, 0) 1px;
-    background: rgb(44, 46, 49);
+    background: rgb(0, 0, 0);
     color: rgb(0, 255, 0);
     font-size: 20px;
     max-width: 200px;
     min-width: 200px;
     max-height: 50px;
     min-height: 50px;
-    margin-top: 23px;
+    margin-top: 5px;
 }
 
 .submitButton:hover{

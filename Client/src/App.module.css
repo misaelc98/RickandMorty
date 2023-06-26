@@ -14,7 +14,7 @@
   border-radius: 100%;
   background-image: url("../public/cieloHD.jpg");
   background-size: cover;
-  animation: stars-rotation 380s linear infinite;
+  animation: stars-rotation 320s linear infinite;
   filter: brightness(0.5);
 }
 

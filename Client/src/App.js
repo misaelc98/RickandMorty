@@ -25,7 +25,7 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true); // VOLVE A PONER ESTO EN FALSE DESPUES
 
   function login(userData) {
     const { email, password } = userData;
@@ -92,12 +92,18 @@ function App() {
     setCharacters(deleted);
   }
 
+  function logout() {
+    setAccess(false)
+    setCharacters([])
+    navigate("/")
+  }
+
   return (
     <div className={style.app}>
       <div className={style.starsAnimation} />
 
       {location.pathname !== "/" && (
-        <Nav onSearch={searchHandler} random={randomHandler} />
+        <Nav log={logout} onSearch={searchHandler} random={randomHandler} />
       )}
 
       <Routes>

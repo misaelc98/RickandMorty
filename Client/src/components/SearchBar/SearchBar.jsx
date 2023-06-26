@@ -3,7 +3,7 @@ import style from "./SearchBar.module.css";
 
 
 export default function SearchBar(props) {
-   const {onSearch} = props
+   const {onSearch, random} = props
    const [id,setId] = useState([]);
 
    function changeHandler(e){
@@ -15,8 +15,15 @@ export default function SearchBar(props) {
 
    return (
       <div className={style.SearchBar}>
+         
+         <button className={style.buttonNeon} onClick={random}>
+          RANDOM
+        </button>
+          
          <input className={style.SearchInput} type="search" value={id} onChange={changeHandler}/>
-         <button className={style.button} onClick={()=>onSearch(id)}>AGREGAR</button>
+         
+         <button className={style.buttonNeon} onClick={()=>onSearch(id)}>ADD</button>
+         
       </div>
    );
 }

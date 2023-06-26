@@ -42,12 +42,10 @@ function handleSubmit(e) {
 
 
         <div className={style.formContainer}>
-            <div className={style.formTitle}>
-                <h1>ENTRAR</h1>
-            </div>
+            
         <form type="submit" onSubmit={handleSubmit}>
             <div className={style.credencial}>
-                <label htmlFor="email">E-mail:</label>
+                <label htmlFor="email">E-mail</label>
                     <input
                     placeholder="ricksanchez@rym.com"
                     type="text"
@@ -58,7 +56,7 @@ function handleSubmit(e) {
                 {errors.email && <span>{errors.email}</span>}
             </div>
             <div className={style.credencial}>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">Password</label>
                     <input
                     type="password"
                     placeholder="password"
