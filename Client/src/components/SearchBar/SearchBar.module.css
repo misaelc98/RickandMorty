@@ -13,7 +13,7 @@
 .SearchInput {
   margin-left: 1px;
   margin-right: 1px;
-  font-family: monospace;
+  font-family: fantasy;
   font-size: 20px;
   color: rgb(255, 255, 255);
   display: flex;
@@ -24,39 +24,14 @@
   border: solid rgb(0, 255, 0) 1px;
   border-radius: 7px 7px 7px 7px;
   box-sizing: border-box;
-  box-shadow: inset 1px 1px 25px #00ff1e;
+  box-shadow: inset 2px 1px 25px #00ff1e;
   max-height: 50px;
   min-height: 50px;
-}
-.SearchInput::before{
-  content: "";
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  background:#fff ;
-  z-index: -1;
-}
-.SearchInput::after{
-  content: "";
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  background:#fff ;
-  z-index: -1;
-  filter: blur(40px);
-}
-.SearchInput::before,
-.SearchInput::after{
-  background: linear-gradient(235deg, #ff00f2, #be152f, #07d400);
 }
 
 .buttonNeon{
   border-radius: 15px;
-  font-family: monospace;
+  font-family: fantasy;
   position: relative;
   display:block;
   padding: 10px 25px;

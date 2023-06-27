@@ -28,12 +28,9 @@
 
 .buttonNeonHome{
   border-radius: 15px;
-  font-family: monospace;
   position: relative;
   padding: 15px 20px;
-  color: #fff;
   letter-spacing: 4px;
-  font-size: 50px;
   text-decoration: none;
   border-width: 0;
   overflow: hidden;
@@ -53,7 +50,7 @@
 
 .buttonNeonFavs{
   border-radius: 15px;
-  font-family: monospace;
+  font-family:fantasy;
   position: relative;
   padding: 15px 20px;
   color: #fff;
@@ -78,7 +75,7 @@
 
 .buttonNeonAbout{
   border-radius: 15px;
-  font-family: monospace;
+  font-family:fantasy;
   position: relative;
   display:block;
   padding: 15px 20px;
@@ -105,7 +102,6 @@
 
 .buttonNeonLog{
   border-radius: 15px;
-  font-family: monospace;
   position: relative;
   padding: 15px 20px;
   color: #fff;
