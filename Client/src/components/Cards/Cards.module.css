@@ -1,23 +1,10 @@
 
-
-.cardList {/*
-    position: absolute;
-    bottom: 0;
-    left: 30px;
-    color: #fff;
-    transform-origin: 0% 10%;
-    transform: rotate(-90deg);
-    font-size: 9px;
-    line-height: 1.4;
-    text-transform: uppercase;
-    opacity: .4; */
-
-
-
-margin-bottom: 10px;
-max-width: auto;
-padding: 30px;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-grid-gap: 25px;
+.cardList {
+  max-width: auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+  overflow-x: hidden;
+  justify-content: space-around;
 }

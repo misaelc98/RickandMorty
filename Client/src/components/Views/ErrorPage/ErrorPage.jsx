@@ -1,10 +1,23 @@
+import { NavLink } from "react-router-dom";
+import style from "./ErrorPage.module.css";
 
 function Error() {
-    return(
-        <div>
-            <img src="https://cdn.dribbble.com/users/1882425/screenshots/4000754/media/cd074c9055a0ca4761b7a2756b3991aa.png?compress=1&resize=800x600&vertical=center" alt="error"/>
+  return (
+    <div>
+      <div class="space"></div>
+      <div className={style.wrapper}>
+        <div class="img-wrapper">
+          <span className={style.span}>44</span>
         </div>
-    )
-};
+        <p className={style.p}>
+          This page has been moved to another universe
+        </p>
+        <NavLink className={style.button} to="/home">
+            GET ME HOME
+            </NavLink>
+      </div>
+    </div>
+  );
+}
 
-export default Error
+export default Error;

@@ -14,7 +14,7 @@
   border-radius: 100%;
   background-image: url("../public/cieloHD.jpg");
   background-size: cover;
-  animation: stars-rotation 320s linear infinite;
+  animation: stars-rotation 260s linear infinite;
   filter: brightness(0.5);
 }
 
@@ -27,14 +27,16 @@
   }
 }
 
+body::-webkit-scrollbar {
+  width: 15px;
+  background-color: rgb(50, 87, 50);
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(4, 38, 38);
+  border-radius: 3px;
+}
 
-
-
-
-/* .fondo {
-  background-image: url("/public/evilmort.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(6, 50, 54);
+}

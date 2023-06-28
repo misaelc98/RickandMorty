@@ -1,6 +1,16 @@
-.About{
-    font-style: italic;
-    font-size: 10pc;
-    color: red;
+.containerFoto{
+    height: 80%;
+    width: 25%;
+    margin-top: 25px;
+    left: 7%;
+    border-radius: 7% 7% 7% 7%;
+    border: 12px solid rgb(5, 45, 45);
+    background-image: url("../../../../public/FotoYO.jpeg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 3px 25px #00ff1e;
+    display:flex ;
+    position:absolute;
 
 }

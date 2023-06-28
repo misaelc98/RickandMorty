@@ -1,65 +1,65 @@
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate, useLocation, Route, Routes } from "react-router-dom";
+import axios from "axios";
 import style from "./App.module.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav.jsx";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { Route } from "react-router-dom";
-import { Routes } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import Detail from "./components/Detail/Detail.jsx";
 import About from "./components/Views/About/About.jsx";
 import Error from "./components/Views/ErrorPage/ErrorPage";
 import Landing from "./components/Views/Landing/Landing.jsx";
-import { useEffect } from "react";
 import Favorites from "./components/Views/Favorites/Favorites";
-import { useDispatch } from "react-redux";
 import { removeFavorite } from "./redux/actions";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-
-  const location = useLocation();
-
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
+  const [access, setAccess] = useState(true);
 
-  const [access, setAccess] = useState(true); // VOLVE A PONER ESTO EN FALSE DESPUES
-
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
       setAccess(access);
       access && navigate("/home");
-    });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
 
-  function searchHandler(id) {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          // Verificar si el personaje ya existe en el estado
-          const isCharacterExist = characters.some(
-            (character) => character.id === data.id
-          );
+  async function searchHandler(id) {
+    try {
+      const response = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      const data = response.data;
 
-          if (isCharacterExist) {
-            window.alert("¡Este personaje ya ha sido agregado!");
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
+      if (data.name) {
+        const isCharacterExist = characters.some(
+          (character) => character.id === data.id
+        );
+
+        if (isCharacterExist) {
+          window.alert("¡Este personaje ya ha sido agregado!");
         } else {
-          window.alert("¡No hay personajes con este ID!");
+          setCharacters((oldChars) => [...oldChars, data]);
         }
+      } else {
+        window.alert("¡No hay personajes con este ID!");
       }
-    );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function randomHandler() {
@@ -69,7 +69,7 @@ function App() {
     random = Number(random);
 
     if (!haveIt.includes(random)) {
-      haveIt.push(random);
+      haveIt.unshift(random);
       fetch(`https://rickandmortyapi.com/api/character/${random}`)
         .then((response) => response.json())
         .then((data) => {
@@ -93,34 +93,69 @@ function App() {
   }
 
   function logout() {
-    setAccess(false)
-    setCharacters([])
-    navigate("/")
+    setAccess(false);
+    setCharacters([]);
+    navigate("/");
   }
 
   return (
     <div className={style.app}>
       <div className={style.starsAnimation} />
 
-      {location.pathname !== "/" && (
-        <Nav log={logout} onSearch={searchHandler} random={randomHandler} />
-      )}
-
       <Routes>
         <Route path="/" element={<Landing login={login} />} />
 
         <Route
           path="/home"
-          element={<Cards characters={characters} onClose={closeHandler} />}
+          element={
+            <>
+              <Nav
+                log={logout}
+                onSearch={searchHandler}
+                random={randomHandler}
+              />
+              <Cards characters={characters} onClose={closeHandler} />
+            </>
+          }
         />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Nav
+                log={logout}
+              />
+              <About />
+            </>
+          }
+        />
 
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route
+          path="/detail/:id"
+          element={
+            <>
+              <Nav
+                log={logout}
+              />
+              <Detail />
+            </>
+          }
+        />
 
-        <Route path="/favorites" element={<Favorites />} />
+        <Route
+          path="/favorites"
+          element={
+            <>
+              <Nav
+                log={logout}
+              />
+              <Favorites />
+            </>
+          }
+        />
 
-        <Route path="*" element={<Error />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </div>
   );

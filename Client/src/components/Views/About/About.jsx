@@ -2,8 +2,11 @@ import style from "./About.module.css";
 
 function About() {
     return(
-        <h1 className={style.About}>Hola mi nombre es Misael Clemente </h1>
-    )
+
+        <div className={style.containerFoto}>
+        </div>
+    
+        )   
 };
 
 export default About;

@@ -1,11 +1,10 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./Nav.module.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import { AiOutlineLogout } from "react-icons/ai";
 import { BiHomeAlt2 } from "react-icons/bi";
 
 export default function Nav({ onSearch, random, log }) {
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     log();
@@ -18,7 +17,7 @@ export default function Nav({ onSearch, random, log }) {
           <BiHomeAlt2 size={55} color="lightgreen"/>
           HOME
         </NavLink>
-        <NavLink className={style.buttonNeonFavs} to="favorites">
+        <NavLink className={style.buttonNeonFavs} to="/favorites">
           FAVS
         </NavLink>
       </div>

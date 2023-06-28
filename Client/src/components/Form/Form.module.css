@@ -1,11 +1,11 @@
 .formContainer {
-    filter: brightness(3);
+    filter: brightness(0.8);
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    color: rgb(0, 0, 0);
+    color: 1px solid rgb(0, 0, 0);
     opacity: 1;
     height: 40vh;
   }
@@ -18,14 +18,14 @@
     align-items: center;
     margin: 50px;
     color: black;
-    font-family: monospace;
-    font-weight: 900;
+    font-family: fantasy;
+    font-weight: 500;
     font-size: 45px;
-    text-shadow: 1px 1px 2px rgb(0, 3, 6);
     width: 300px;
 }
 
 .credencial input{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
