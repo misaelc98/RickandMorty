@@ -43,11 +43,11 @@ function Detail() {
                 </div>
                 <div>
                     <h3>Origin: </h3>
-                    <p> {character.origin?.name}</p>
+                    <p> {character.origin}</p>
                 </div>
                 <div>
                     <h3>Location: </h3>
-                    <p> {character.location?.name}</p>
+                    <p> {character.location}</p>
                 </div>
 
             </div>

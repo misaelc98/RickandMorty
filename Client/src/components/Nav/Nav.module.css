@@ -3,12 +3,12 @@
   align-items: center;
   position: sticky;
   height: 100px;
-  width: 1760px;
-  z-index: 100;
+  width: 100%;
+  z-index: 5;
   top: 0;
   left: 0;
   gap: 0;
-  padding: 0 5rem;
+  /* padding: 0 5rem; */
   background-color: rgb(0, 0, 0);
   opacity: 0.85;
 }
@@ -17,39 +17,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 1px;
 }
 
 .rightNav {
   display: flex;
   align-items: center;
-  margin-right: 1px;
   text-align: center;
 }
 
 .buttonNeonHome {
-  border-radius: 15px;
+  border-radius: 17px;
   position: relative;
-  padding: 15px 20px;
+  padding: 15px;
   text-decoration: none;
   border-width: 0;
-  overflow: hidden;
   transition: 0.5s;
   background: transparent;
-  margin-left: -10%;
-  max-width: 50px;
-  min-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
+  
 }
-.buttonNeonHome:hover {
-  background: rgb(13, 255, 0);
+.buttonNeonHome:hover{
+  background: rgb(0, 255, 0);
   box-shadow: 0 0 10px rgb(0, 255, 0), 0 0 40px rgb(0, 255, 0),
     0 0 rgb(0, 255, 0);
   transition-delay: 0.2s;
 }
 
+
 .buttonNeonFavs {
+  border-radius: 17px;
   font-family: fantasy;
   position: relative;
   padding: 15px 20px;
@@ -68,7 +63,7 @@
   min-height: 50px;
 }
 .buttonNeonFavs:hover {
-  background: rgb(13, 255, 0);
+  background: rgb(0, 255, 0);
   box-shadow: 0 0 10px rgb(0, 255, 0), 0 0 40px rgb(0, 255, 0),
     0 0 80px rgb(0, 255, 0);
   transition-delay: 0.2s;
@@ -94,7 +89,7 @@
   margin-right: 50px;
 }
 .buttonNeonAbout:hover {
-  background: rgb(13, 255, 0);
+  background: rgb(0, 255, 0);
   box-shadow: 0 0 10px rgb(0, 255, 0), 0 0 40px rgb(0, 255, 0),
     0 0 80px rgb(0, 255, 0);
   transition-delay: 0.2s;
@@ -124,4 +119,24 @@
   box-shadow: 0 0 10px rgb(200, 23, 20), 0 0 40px rgb(200, 23, 20),
     0 0 80px rgb(200, 23, 20);
   transition-delay: 0.2s;
+}
+
+.iconoLog{
+  font-size: 50px;
+  color:rgb(255, 255, 255);
+}
+.iconoLog2{
+  color: rgb(8, 0, 0);
+  transition-delay: 0.3s;
+}
+
+.iconoHome2{
+  font-size:50px;
+  color:rgb(255, 255, 255);
+}
+
+.iconoHome2:hover{
+
+  color: rgb(8, 0, 0);
+  transition-delay: 0.3s;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate, useLocation, Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import style from "./App.module.css";
 import Cards from "./components/Cards/Cards.jsx";
@@ -10,13 +10,15 @@ import About from "./components/Views/About/About.jsx";
 import Error from "./components/Views/ErrorPage/ErrorPage";
 import Landing from "./components/Views/Landing/Landing.jsx";
 import Favorites from "./components/Views/Favorites/Favorites";
-import { removeFavorite } from "./redux/actions";
+import { removeFavorite, setError, closeError } from "./redux/actions";
+import AlertMsg from "./components/AlertMsg/AlertMsg";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [access, setAccess] = useState(true);
+  const showError = useSelector((state) => state.showError);
 
   async function login(userData) {
     try {
@@ -50,12 +52,12 @@ function App() {
         );
 
         if (isCharacterExist) {
-          window.alert("¡Este personaje ya ha sido agregado!");
+          dispatch(setError("¡Este personaje ya ha sido agregado!"));
         } else {
           setCharacters((oldChars) => [...oldChars, data]);
         }
       } else {
-        window.alert("¡No hay personajes con este ID!");
+        dispatch(setError("¡No hay personajes con este ID!"));
       }
     } catch (error) {
       console.log(error);
@@ -98,9 +100,13 @@ function App() {
     navigate("/");
   }
 
+  const handleClose = () => {dispatch(closeError())};
+
   return (
     <div className={style.app}>
       <div className={style.starsAnimation} />
+
+      {showError && <AlertMsg handleClose={handleClose} />}
 
       <Routes>
         <Route path="/" element={<Landing login={login} />} />
@@ -123,9 +129,7 @@ function App() {
           path="/about"
           element={
             <>
-              <Nav
-                log={logout}
-              />
+              <Nav log={logout} />
               <About />
             </>
           }
@@ -135,9 +139,7 @@ function App() {
           path="/detail/:id"
           element={
             <>
-              <Nav
-                log={logout}
-              />
+              <Nav log={logout} />
               <Detail />
             </>
           }
@@ -147,9 +149,7 @@ function App() {
           path="/favorites"
           element={
             <>
-              <Nav
-                log={logout}
-              />
+              <Nav log={logout} />
               <Favorites />
             </>
           }

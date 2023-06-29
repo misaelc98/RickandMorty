@@ -5,6 +5,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 8px;
-  overflow-x: hidden;
+  overflow-x: none;
   justify-content: space-around;
 }

@@ -14,8 +14,7 @@ export default function Nav({ onSearch, random, log }) {
     <div className={style.navContainer}>
       <div className={style.leftNav}>
         <NavLink className={style.buttonNeonHome} to="/home">
-          <BiHomeAlt2 size={55} color="lightgreen"/>
-          HOME
+          <BiHomeAlt2 className={style.iconoHome2}/>
         </NavLink>
         <NavLink className={style.buttonNeonFavs} to="/favorites">
           FAVS
@@ -27,7 +26,7 @@ export default function Nav({ onSearch, random, log }) {
           ABOUT
         </NavLink>
         <NavLink className={style.buttonNeonLog} onClick={handleLogout}>
-          <AiOutlineLogout size={55} color="lightgreen" />
+          <AiOutlineLogout className={style.iconoLog} />
         </NavLink>
       </div>
     </div>

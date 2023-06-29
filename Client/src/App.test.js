@@ -7,8 +7,9 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+      ///////////////////////////////////////////////////////////
 
-/*  const [errorMessage, setErrorMessage] = useState("");
+ /* const [errorMessage, setErrorMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
   const handleShowAlert = () => {
@@ -34,7 +35,7 @@ test('renders learn react link', () => {
       } else {
         setErrorMessage("¡No hay personajes con este ID!");
       }
-      setShowAlert(true); // Mostrar el mensaje de alerta
+      setShowAlert(true); 
     } catch (error) {
       console.log(error);
     }
@@ -47,8 +48,8 @@ test('renders learn react link', () => {
 
       <AlertMessage
         message={errorMessage}
-        onClose={() => setShowAlert(false)} // Cerrar el mensaje de alerta
+        onClose={() => setShowAlert(false)} 
         show={showAlert}
       />
-
-      {/* ... */
+      </div>
+);*/

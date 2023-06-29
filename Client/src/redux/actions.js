@@ -4,6 +4,31 @@ export const REMOVE_FAV = "REMOVE_FAV";
 export const ORDER = "ORDER";
 export const FILTER = "FILTER";
 export const RESET = "RESET_FAV";
+export const SET_ERROR = "SET_ERROR";
+export const CLOSE_ERROR = "CLOSE_ERROR";
+
+export const closeError = () => {
+  try {
+    return{
+      type : CLOSE_ERROR,
+      payload:false,
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+export const setError = (message) => {
+ try {
+  return{
+    type : SET_ERROR,
+    payload: message,
+  }
+ } catch (error) {
+    console.log(error)
+ }
+}
 
 export const addFavorite = (character) => {
   try {

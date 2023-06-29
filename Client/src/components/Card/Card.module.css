@@ -23,7 +23,7 @@
   border: 9px solid rgb(5, 55, 45);
   padding: 15px;
   cursor: pointer;
-  border-radius: 17px 17px 17px 17px;
+  border-radius: 17px;
   animation: zoomIn 0.5s; 
 }
 

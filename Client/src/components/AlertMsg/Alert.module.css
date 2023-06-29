@@ -1,40 +1,45 @@
-.alertmsg {
-    color: white;
+.msgContainer {
+  color: white;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  background-color: rgb(74, 138, 78);
+  z-index: 105;
 }
 
-.alertmsg.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.alertcontent {
-  background-color: #fff;
+.msgContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c92020;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.closebutton {
+.closeBtn {
+  top:0;
+  left: 0%;
+  position: absolute;
   background-color:white ;
+  font-size: 50px;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.closebutton:hover {
-  background-color: #999;
+.errorMsg{
+  color: rgb(16, 1, 1);
+  font-size: 45px;
 }
+
+
+
+
